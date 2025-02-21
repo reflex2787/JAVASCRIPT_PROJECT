@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1B1212;
+        }
+
+        .containar {
+            width: 800px;
+            max-height: 750px;
+            /* border: 1px solid gray; */
+            margin: 100px auto;
+            padding: 10px;
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            border: none;
+            background-color: black;
+            color: white;
+        }
+
+        #undercoder {
+            list-style: none;
+            /* background-color: brown; */
+            margin-top: 10px;
+        }
+
+        #undercoder li {
+            width: 100%;
+            padding: 10px 20px;
+            /* background-color: aqua; */
+            margin-top: 10px;
+            border-radius: 20px;
+            font-size: 18px;
+        }
+
+        #undercoder li i {
+            font-size: 20px;
+            position: absolute;
+            right: 30px;
+            cursor: pointer;
+        }
+
+        .donnerx {
+            text-decoration: line-through;
+            background-color: black !important;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containar">
+        <input id="demo" type="text" placeholder="search your things................">
+        <ul id="undercoder">
+            <!-- <li><i class="fa-solid fa-delete-left"></i></li> -->
+        </ul>
+    </div>
+    <script>
+        var demo = document.querySelector("#demo");//vaey most inportant of queyselector class and id
+        var undercoder = document.querySelector("#undercoder");
+        var colors = ["aqua", "teal", "lightgreen", "lightcoral", "yellow", "lightblue", "orange", "cadetblue", "burlywood", "cornflowerblue"];
+        demo.addEventListener(
+            "keyup",
+            function (e) {
+                if (e.key == "Enter" && this.value !== "") {
+                    // console.log(this.value);//means input value printe or console page
+                    var listeitams = document.createElement("li");
+                    // console.log(listeitams);//chack to li
+                    listeitams.innerHTML = `${this.value}<i class="fa-solid fa-delete-left "></i>`;//this li work
+
+                    // var colorIndex = undercoder.children.length % colors.length; // GHAG karne par ul ki li me bgcolor ki lenght ka
+                    // listeitams.style.backgroundColor = colors[colorIndex];
+
+                    var bg_color = undercoder.children.length % colors.length;
+                    listeitams.style.backgroundColor = colors[bg_color];
+
+                    undercoder.appendChild(listeitams);//this ul list work
+                    listeitams.querySelector("i").addEventListener(
+                        "click",
+                        function () {
+                            listeitams.remove();//li to write work remove
+                        }
+                    )
+                    listeitams.addEventListener(
+                        "click",
+                        function () {
+                            this.classList.toggle("donnerx");
+                        }
+                    )
+                    this.value = "";// very most work one enter is impty inpue
+                };
+            }
+        )
+    </script>
+</body>
+
+</html>

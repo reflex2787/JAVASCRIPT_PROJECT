@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .containar {
+            width: 1100px;
+            min-height: 500px;
+            /* border: 1px solid red; */
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            background-color: brown;
+            font-size: 20px;
+            text-align: start;
+            position: relative;
+        }
+
+        .button i {
+            position: absolute;
+            right: 20px;
+        }
+
+        .contant {
+            padding: 10px;
+            font-size: 18px;
+            height: 0;
+            opacity: 0;
+            color: white;
+            overflow: hidden;
+            /* most proparly css proparty for accordiyn */
+            /* transition: 0.3s; */
+        }
+
+        .show {
+            height: auto;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containar">
+        <button class="button">Can I track the location of my booked bus online?
+            <i class="fa-solid fa-plus my_frist"></i>
+            <i class="fa-solid fa-minus my_second"></i>
+        </button>
+        <p class="contant">
+            Not at all! The bus ticket price is the same as you would get from the bus operator/ counter of any bus
+            ticket agency. redbus reduces the travel budget by comparing the bus ticket prices among various operators,
+            making it a more cost-effective choice. Therefore, online bus booking is increasingly recognized as a more
+            convenient, efficient, and economical mode of securing travel arrangements.
+        </p>
+        <button class="button">What are the advantages of purchasing a bus ticket with redBus?
+            <i class="fa-solid fa-plus my_frist"></i>
+            <i class="fa-solid fa-minus my_second"></i>
+        </button>
+        <p class="contant">
+            Not at all! The bus ticket price is the same as you would get from the bus operator/ counter of any bus
+            ticket agency. redbus reduces the travel budget by comparing the bus ticket prices among various operators,
+            making it a more cost-effective choice. Therefore, online bus booking is increasingly recognized as a more
+            convenient, efficient, and economical mode of securing travel arrangements.
+        </p>
+        <button class="button">Why book bus tickets online on redBus?
+            <i class="fa-solid fa-plus my_frist"></i>
+            <i class="fa-solid fa-minus my_second"></i>
+        </button>
+        <p class="contant">
+            Not at all! The bus ticket price is the same as you would get from the bus operator/ counter of any bus
+            ticket agency. redbus reduces the travel budget by comparing the bus ticket prices among various operators,
+            making it a more cost-effective choice. Therefore, online bus booking is increasingly recognized as a more
+            convenient, efficient, and economical mode of securing travel arrangements.
+        </p>
+        <button class="button">Do I need to create an account on the redBus site to book my bus ticket?
+            <i class="fa-solid fa-plus my_frist"></i>
+            <i class="fa-solid fa-minus my_second"></i>
+        </button>
+        <p class="contant">
+            Not at all! The bus ticket price is the same as you would get from the bus operator/ counter of any bus
+            ticket agency. redbus reduces the travel budget by comparing the bus ticket prices among various operators,
+            making it a more cost-effective choice. Therefore, online bus booking is increasingly recognized as a more
+            convenient, efficient, and economical mode of securing travel arrangements.
+        </p>
+        <button class="button">Does bus booking online cost me more?
+            <i class="fa-solid fa-plus my_frist"></i>
+            <i class="fa-solid fa-minus my_second"></i>
+        </button>
+        <p class="contant">
+            Not at all! The bus ticket price is the same as you would get from the bus operator/ counter of any bus
+            ticket agency. redbus reduces the travel budget by comparing the bus ticket prices among various operators,
+            making it a more cost-effective choice. Therefore, online bus booking is increasingly recognized as a more
+            convenient, efficient, and economical mode of securing travel arrangements.
+        </p>
+        <button class="button">How can I get the discounts on the bus booking?
+            <i class="fa-solid fa-plus my_frist"></i>
+            <i class="fa-solid fa-minus my_second"></i>
+        </button>
+        <p class="contant">
+            Not at all! The bus ticket price is the same as you would get from the bus operator/ counter of any bus
+            ticket agency. redbus reduces the travel budget by comparing the bus ticket prices among various operators,
+            making it a more cost-effective choice. Therefore, online bus booking is increasingly recognized as a more
+            convenient, efficient, and economical mode of securing travel arrangements.
+        </p>
+        <button class="button">What's New in Bus Booking on redBus?
+            <i class="fa-solid fa-plus my_frist"></i>
+            <i class="fa-solid fa-minus my_second"></i>
+        </button>
+        <p class="contant">
+            Not at all! The bus ticket price is the same as you would get from the bus operator/ counter of any bus
+            ticket agency. redbus reduces the travel budget by comparing the bus ticket prices among various operators,
+            making it a more cost-effective choice. Therefore, online bus booking is increasingly recognized as a more
+            convenient, efficient, and economical mode of securing travel arrangements.
+        </p>
+        <button class="button">Can I book a Government bus ticket on redBus?
+            <i class="fa-solid fa-plus my_frist"></i>
+            <i class="fa-solid fa-minus my_second"></i>
+        </button>
+        <p class="contant">
+            Not at all! The bus ticket price is the same as you would get from the bus operator/ counter of any bus
+            ticket agency. redbus reduces the travel budget by comparing the bus ticket prices among various operators,
+            making it a more cost-effective choice. Therefore, online bus booking is increasingly recognized as a more
+            convenient, efficient, and economical mode of securing travel arrangements.
+        </p>
+    </div>
+
+    <script>
+        var btn = document.querySelectorAll(".button");
+        // console.log(btn);
+
+        var ctn = document.querySelectorAll(".contant");
+        // console.log(ctn);
+
+        var my_frist = document.querySelectorAll(".my_frist");
+        var my_second = document.querySelectorAll(".my_second");
+
+
+        btn.forEach(
+            function (button, index) {//value diffine the arrary index value and indexs
+                button.addEventListener(//button click work thigg
+                    "click",
+                    function () {//buttons click working thingss
+                        ctn.forEach(//ctn fo array indexs value and indexs
+                            function (contant, idx) {
+                                if (idx !== index) {
+                                    contant.classList.remove("show");
+                                    my_frist[idx].style.display = "inline";
+                                    my_second[idx].style.display = "none";
+
+                                }
+                            }
+                        );
+                        ctn[index].classList.toggle("show");
+                        if(ctn[index].classList.contains("show")){//if condition work is contants add to show class to working work is icons apply
+                            my_frist[index].style.display="none";
+                            my_second[index].style.display="inline"; 
+                        }
+                        else{
+                            my_frist[index].style.display="inline";
+                            my_second[index].style.display="none";    
+                        }
+                    }
+                );
+            }
+        );
+
+    </script>
+</body>
+
+</html>

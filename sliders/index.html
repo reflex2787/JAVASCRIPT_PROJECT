@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider videos</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .containar{
+            width: 900px;
+            height: 200px;
+            border: 1px solid brown;
+            margin:100px auto;
+            padding: 5px;
+            overflow: hidden;
+            display: flex;
+        }
+        .itams{
+            width: 33%;
+            height: 100%;
+            transform: translateX(0px);
+            transition: 1s;
+            transition-timing-function: ease-in-out;
+            flex-shrink: 0;
+        }
+        .buttons{
+            margin-left: 550px;
+            margin-top: -70px;
+        }
+        .btn{
+            background-color: brown;
+            color: white;
+            font-size: 25px;
+            border: none;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 7px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="containar">
+        <div class="itams">
+            <video muted loop autoplay src="1.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="2.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="3.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="4.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="5.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="6.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video  muted loop autoplay src="7.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video  muted loop autoplay src="8.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="9.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video  muted loop autoplay src="10.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="1.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="2.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="3.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="4.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="5.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="6.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video  muted loop autoplay src="7.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video  muted loop autoplay src="8.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video muted loop autoplay src="9.mp4" width="100%" height="100%"></video>
+        </div>
+        <div class="itams">
+            <video  muted loop autoplay src="10.mp4" width="100%" height="100%"></video>
+        </div>
+        </div>
+         <div class="buttons">
+            <button onclick="back()" class="btn" ><</button>
+            <button onclick="next()" class="btn">></button>
+         </div>
+        <script>
+            var cards=document.querySelectorAll(".itams");
+            var peo="0";
+            function next(){
+                if(cards.length-3==peo)return
+                peo++
+                    for (var video of cards) {
+                    video.style.transform = `translateX(-${peo * 100}%)`;
+        }
+                }
+
+                function back(){
+                    if(peo==0)return
+                peo--
+                    for (var video of cards) {
+                    video.style.transform = `translateX(-${peo * 100}%)`;
+        }
+                }
+        </script>
+    </div>
+</body>
+</html>

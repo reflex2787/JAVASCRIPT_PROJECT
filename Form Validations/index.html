@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Form</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        /* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+select {
+    -webkit-appearance: none; /* removes default styles in some browsers */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Submit Your Details</h1>
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" date-validation="required" placeholder="Enter your full name" >
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" date-validation="required" >
+            </div>
+            <div class="input-group">
+                <label for="address-select">City</label>
+                <select id="address-select" name="address-select"  date-validation="required">
+                    <option value="" disabled selected>Select your address</option>
+                    <option value="Udaipur">Udaipur</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Chittorgarh">Chittorgarh</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="address">Detailed Address</label>
+                <textarea id="address" name="address" placeholder="Enter your detailed address" date-validation="required"></textarea>
+            </div>
+            <div class="submit-btn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script>
+
+            const input=document.querySelectorAll("input[date-validation],select[date-validation],textarea[date-validation]")
+
+
+            console.log(input)
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .containar {
+      width: 500px;
+      min-height: 100px;
+      box-shadow: 4px 4px 4px 4px gray;
+      margin: 50px auto;
+      border-radius: 20px;
+    }
+
+    #hello {
+      width: 100%;
+      height: 30px;
+      border-radius: 20px;
+      padding-left: 20px;
+    }
+
+    #hello2 {
+      width: 100%;
+    }
+
+    p {
+      background-color: BROWN;
+      height: 30px;
+      color: white;
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      padding-left: 30px;
+      position: relative;
+      border-radius: 20px;
+    }
+    i{
+      position: absolute;
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="containar">
+    <input onkeyup="demo3(event)" placeholder="please search your dimands........" type="text" id="hello">
+    <ul id="hello2"></ul>
+
+    <script>
+      var demo = document.getElementById("hello");
+      var demo2 = document.getElementById("hello2");
+      var sum = "";
+
+      function demo3(event) {
+        // console.log(event.key)
+        if (event.key == "Enter") {
+          sum += `<p> ${demo.value}<i class="fa-solid fa-xmark"></i></p>`;
+          demo2.innerHTML = sum;
+          demo.value = "";
+        }
+      }
+    </script>
+
+
+    <!-- <input onkeyup="hello3(event)" type="text" id="hello">
+  <ol id="hello2"></ol>
+
+  <script>
+     var demo=document.getElementById("hello");
+     var demo2=document.getElementById("hello2");
+    var sum=0;
+     function hello3(event){
+        // console.log(event.key)
+        if(event.key=="Enter"){
+          sum+=`<li>${demo.value}</li>`
+          demo2.innerHTML=sum;
+          demo.value="";
+        }
+     }
+  </script> -->
+  </div>
+</body>
+
+</html>

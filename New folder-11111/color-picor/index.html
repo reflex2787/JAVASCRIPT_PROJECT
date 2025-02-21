@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>colorpicker</title>
+<head>
+   <style>
+    body{
+        transition: 1s;
+    }
+    .main{
+        width: 100%; 
+        /* border: 2px solid red; */
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+    }
+    .box{
+        width: 18%;
+        height: 250px;
+        /* border: 2px solid palevioletred; */
+        border-radius: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        cursor: pointer;
+        /* border-radius: 50%; */
+       
+    }
+    .overlay{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: brown;
+        transform: scale(0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        transition: 600ms;
+        
+    }
+
+   </style> 
+   
+</head>
+<body>
+    <div class="main">
+     
+    </div>
+    <div class="overlay"></div>
+    <audio id="myaudio" src="mixkit-select-click-1109.wav"></audio>
+
+    <script src="colorpicker.js"></script>
+</body>
+</html>

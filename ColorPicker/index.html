@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .containar {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        /* border: 2px solid red; */
+        justify-content: space-around;
+        padding: 10px;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        /* border: 2px solid red; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-radius: 30px;
+        box-shadow: 4px 4px 15px 4px black inset;
+        text-shadow: 4px 4px 4px white;
+      }
+      .overly {
+        width: 100%;
+        height: 100%;
+        background-color: aquamarine;
+        box-shadow: 4px 4px 15px 4px black inset;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: scale(0);
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+        text-shadow: 4px 4px 4px white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="containar">
+      <div class="overly">
+        <audio id="myaudio" src="mixkit-select-click-1109.wav"></audio>
+      </div>
+    </div>
+
+    <script>
+      var boxes = document.querySelector(".containar");
+      var body = document.querySelector("body");
+      var overly = document.querySelector(".overly");
+      var myaudio = document.querySelector("#myaudio");
+      var bords=["Well Done","copyed","Exilente Work","Good Job",
+      "OSM Work","Beilient Work","Thanks for copy"];
+
+
+      for (var i = 1; i <= 21; i++) {
+
+        var divElement = document.createElement("div");
+        divElement.classList.add("box");
+        boxes.appendChild(divElement);
+
+        var red = parseInt(Math.random() * 256)
+          .toString(16)
+          .padStart(2, "0");
+
+        var green = parseInt(Math.random() * 256)
+          .toString(16)
+          .padStart(2, "0");
+
+        var blue = parseInt(Math.random() * 256)
+          .toString(16)
+          .padStart(2, "0");
+
+        var codecolor = "#" + red + green + blue;
+
+        //   console.log(codecolor)
+        divElement.innerText = codecolor;
+
+        divElement.style.backgroundColor = codecolor;
+
+        divElement.addEventListener(
+          "click", 
+          function (divElement) {
+          overly.innerText = bords[parseInt(Math.random()*bords.length)];
+          overly.style.transform = "scale(1)";
+          navigator.clipboard.writeText(divElement.target.innerText);
+          //divelement ke color ko overly ki innertext me dalne ke liy use
+          overly.style.backgroundColor = divElement.target.innerText;
+          setTimeout(
+            function () {
+            overly.style.transform = "scale(0)";
+          myaudio.play();
+          }, 1000);
+        });
+      }
+
+      body.addEventListener(
+        "mousemove",
+         function () {
+        var red = parseInt(Math.random() * 256)
+          .toString(16)
+          .padStart(2, "0");
+
+        var green = parseInt(Math.random() * 256)
+          .toString(16)
+          .padStart(2, "0");
+
+        var blue = parseInt(Math.random() * 256)
+          .toString(16)
+          .padStart(2, "0");
+
+        var codecolor = "#" + red + green + blue;
+
+        boxes.style.backgroundColor = codecolor;
+        boxes.style.transition = "0.2s";
+      });
+    </script>
+  </body>
+</html>

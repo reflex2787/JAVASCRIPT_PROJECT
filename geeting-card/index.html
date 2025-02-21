@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geeting card</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: inherit;
+            letter-spacing: 0.5px;
+        }
+
+        body {
+            background: linear-gradient(to left,
+                    #321325, #5f0f40);
+        }
+
+        .containar {
+            width: 1200px;
+            height: 600px;
+            /* border: 1px solid red; */
+            margin: 50px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main {
+            width: 500px;
+            height: 100%;
+            /* border: 2px brown double; */
+            border-radius: 20px;
+            background: linear-gradient(to right, #0d3b66, #321325);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px;
+            gap: 30px;
+            font-size: 20px;
+        }
+
+        input {
+            height: 50px;
+            border-radius: 20px;
+            background-color: #321325;
+            border: none;
+            /* font-size: 18px; */
+            padding-left: 20px;
+        }
+
+        textarea {
+            height: 100px;
+            border-radius: 20px;
+            background-color: #321325;
+            border: none;
+            /* font-size: 18px; */
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        p {
+            color: white;
+            /* font-size: 20px; */
+            /* padding-top: 60px; */
+        }
+
+        .inportent {
+            display: flex;
+            width: 700px;
+            position: absolute;
+            right: 20px;
+            /* border: 1px solid white; */
+        }
+
+        .bgcolor {
+            /* width: 1200px; */
+            margin: auto;
+            display: inline-block;
+            /* margin-left: 600px; */
+            font-size: 20px;
+            color: white;
+        }
+
+        .font_color_changes {
+            /* width: 1200px; */
+            margin: auto;
+            display: inline-block;
+            /* margin-left: 600px; */
+            font-size: 20px;
+            color: white;
+        }
+
+        input[type="color"] {
+            width: 150px;
+            padding: 3px 10px;
+            margin-top: -20px;
+            border: 1px solid white;
+        }
+
+        .button {
+            /* border: 2px solid red; */
+            display: inline-block;
+            position: absolute;
+            left: 200px;
+            top: 680px;
+        }
+
+        button {
+            padding: 5px 25px;
+            margin: 0px 10px;
+            border-radius: 20px;
+            background-color: #0d3b66;
+            color: white;
+            font-size: 20px;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        #jorryx {
+            color: white;
+            font-size: 20px;
+        }
+
+        .imges {
+            width: 150px;
+            height: 600px;
+            /* border: 2px solid red; */
+            position: absolute;
+            top: 50px;
+            left: 695px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .img {
+            width: 100%;
+            height: 25%;
+            /* border: 1px solid yellow; */
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .img:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 4px 4px 4px gray;
+        }
+
+        .img2 {
+            width: 100%;
+            height: 25%;
+            /* border: 1px solid yellow; */
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .img2:hover {
+            transform: scale(1.1) rotate(-10deg);
+            box-shadow: 4px 4px 4px gray;
+        }
+        .bigest1{
+            width: 100%;
+            height: 70px;
+            /* border: 1px solid red; */
+             overflow-x: hidden;
+        }
+        .bigest{
+            width: 100%;
+            height: 250px;
+            /* border: 1px solid red; */
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containar">
+        <div class="main">
+            <label for="hello"> To :-</label>
+            <input onkeyup="demon(this,0)" class="demo" type="text" id="hello"
+                placeholder="enter your start location.....">
+
+            <label for="">Massege :-</label>
+            <textarea onkeyup="demon(this,1)" class="demo"
+                placeholder="please enter your journey happiness......"></textarea>
+
+            <label for="hello">From :-</label>
+            <input onkeyup="demon(this,2)" class="demo" type="text" id="hello"
+                placeholder="enter your end location.....">
+        </div>
+        <div class="main">
+            <div class="bigest1">
+                <p class="demo2">To :-</p>
+            </div>
+            <div class="bigest">
+                <p class="demo2">Massege :-</p>
+            </div>
+            <div class="bigest1">
+                <p class="demo2">From :-</p>
+            </div>
+        </div>
+    </div>
+    <div class="inportent">
+        <div class="bgcolor">
+            <label>Background-color:-</label>
+            <input onchange="bgcolor(this.value)" type="color">
+        </div>
+        <div class="font_color_changes">
+            <label>Color:-</label>
+            <input onchange="font_color_changes(this.value)" type="color">
+        </div>
+    </div>
+    <div class="button">
+        <button onclick="fontsizechange()">+</button>
+        <input value="16" id="jorryx" type="number">
+        <button onclick="fontsizechangehello()">-</button>
+    </div>
+    <div class="imges">
+        <div class="img">
+            <img onclick="chang_bgimg(this,0)" src="images/alan-emery-SYzUF6XcWBY-unsplash.jpg" width="100%"
+                height="100%" alt="">
+        </div>
+        <div class="img img2">
+            <img onclick="chang_bgimg(this,1)" src="images/philipp-pilz-iQRKBNKyRpo-unsplash.jpg" width="100%"
+                height="100%" alt="">
+        </div>
+        <div class="img">
+            <img onclick="chang_bgimg(this,2)" src="images/jonatan-pie-xgTMSz6kegE-unsplash.jpg" width="100%"
+                height="100%" alt="">
+        </div>
+    </div>
+    <script>
+        var demo = document.getElementsByClassName("demo");
+        var demo2 = document.getElementsByClassName("demo2");
+        var demo3 = document.getElementsByClassName("demo3");
+        var main = document.getElementsByClassName("main");
+        var imgSrc = document.getElementsByClassName("imgSrc");
+        var font = 16;
+        // console.log(main);
+
+        function demon(data, flag) {
+            demo2[flag].innerHTML = data.value;
+        }
+        function bgcolor(colorcode) {
+            main[1].style.background = colorcode;
+        }
+        function fontsizechange() {
+            if (font < 25) {
+                font++
+                main[1].style.fontSize = font + "px";
+                jorryx.value = font;
+            }
+        }
+        function fontsizechangehello() {
+            if (font > 15) {
+                font--
+                main[1].style.fontSize = font + "px";
+                jorryx.value = font;
+            }
+        }
+        function font_color_changes(colorCode) {
+            for (var i = 0; i < demo2.length; i++) {
+                demo2[i].style.color = colorCode;
+            }
+            console.log(colorCode);
+        }
+
+        function chang_bgimg(data, value) {
+            // console.log(data,value);
+            // imgSrc = data.src || value; 
+            main[1].style.backgroundImage = `url('${data.src}')`;
+            main[1].style.backgroundSize = "cover";
+            main[1].style.backgroundPosition = "center";
+            main[1].style.backgroundRepeat = "no-repeat";
+        }
+    </script>
+</body>
+
+</html>

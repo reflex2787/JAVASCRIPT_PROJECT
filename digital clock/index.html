@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital clock</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .containar {
+            width: 600px;
+            height: 400px;
+            /* border: 1px solid gray; */
+            border-radius: 20px;
+            margin: 100px auto;
+            background-color: black;
+            padding: 40px;
+        }
+
+        .time_box {
+            border: 2px solid red;
+            margin: auto;
+            display: flex;
+            /* justify-content: space-around; */
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            padding: 30px;
+        }
+
+        .box {
+            padding: 10px 30px;
+            /* border: 1px solid green; */
+            color: white;
+            border-radius: 10px;
+            background-color: grey;
+            font-size: 30px;
+            margin: auto;
+        }
+
+        .days {
+            color: white;
+            display: flex;
+            border: 1px solid red;
+            margin-top: 10px;
+            padding: 20px;
+            gap: 40px;
+        }
+
+        .days p {
+            /* background-color: green; */
+            padding: 5px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containar">
+        <div class="time_box">
+            <div class="box">
+                <p class="time">00</p>
+            </div>:
+            <div class="box">
+                <p class="time">00</p>
+            </div>:
+            <div class="box">
+                <p class="time">00</p>
+            </div>
+
+        </div>
+        <div class="days">
+            <p>Mon</p>
+            <p>Tue</p>
+            <p>Wed</p>
+            <p>Thu</p>
+            <p>Fri</p>
+            <p>Sat</p>
+            <p>Sun</p>
+        </div>
+    </div>
+
+    <script>
+        var box=document.querySelector(".box");
+        var time=document.querySelector(".time");
+
+    </script>
+</body>
+
+</html>

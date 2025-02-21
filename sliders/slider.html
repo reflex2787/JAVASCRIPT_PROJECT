@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Slider</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .boxer{
+            width: 1200px;
+            height: 300px;
+            box-shadow: 4px 4px 4px 4px gray;
+            margin:100px auto;
+            position: relative;
+        }
+        .containar{
+            width: 1200px;
+            height: 200px;
+            padding: 5px;
+            display: flex;
+            margin-top: 10px;
+            transform: translateX(0px);
+            overflow: hidden;
+        }
+        .itams{ 
+            width: 150px;
+            height: 180px;
+            flex-shrink: 0;
+            margin: 10px 5px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .botton{
+            display: inline-block;
+            margin-left: 1000px;
+            margin-top: 10px;
+        }
+        .btn{
+            height: 35px;
+            width: 35px;
+            margin: 20px 0px 0px 20px;
+            border: none;
+            border-radius: 50%;
+            color: black;
+        }
+        .text{
+            display: inline-block;
+            height: 50px;
+            position: absolute;
+            font-size: 25px;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 20px;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <div class="boxer">
+    <div class="text">
+        What's on your mind ?
+    </div>
+    <div class="botton">
+        <button onclick="back()" class="btn">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button onclick="next()" class="btn">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+    <div class="containar">
+        <div class="itams">
+            <img src="image/CHOLE BATURE.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/COFFIE.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/DESSERTS.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/GULAB JAMUN.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/KHICHADI.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/LASSI.jpeg" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/NOODELS.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/NORTH INDIA.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/POORI.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/PRANTHA.avif" width="100%" height="100%" alt="">
+        </div>
+        <div class="itams">
+            <img src="image/PURE VAG.avif" width="100%" height="100%" alt="">
+        </div>
+    </div>
+  </div>
+  <script>
+    var hello=document.querySelectorAll(".itams");
+            var peo=0;
+            function next(){
+                if(hello.length-7==peo)return
+                peo++
+                    for (var img of hello) {
+                    img.style.transform = `translateX(-${peo * 100}%)`;
+                    img.style.transition="0.5s";
+        }
+                }
+
+                function back(){
+                    if(peo==0)return
+                peo--
+                    for (var img of hello) {
+                    img.style.transform = `translateX(-${peo * 100}%)`;
+                    img.style.transition="0.5s";
+        }
+                }
+  </script>
+</body>
+</html>

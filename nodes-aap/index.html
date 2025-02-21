@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>nodes-aap</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #202020;
+        }
+        button{
+            padding: 7px 18px;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            color: white;
+            background-color: black;
+            border: none;
+            border: 1px solid white;
+            cursor: pointer;
+            position: fixed;
+        }
+        .containar{
+            width: 1150px;
+            height: 600px;
+            /* border: 1px solid red; */
+            position: absolute;
+            top: 100px;
+            left: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            /* justify-content: space-around; */
+            gap: 10px;
+        }
+        .itams{
+            width: 350px;
+            height: 500px;
+            /* border: 1px solid gold; */
+            margin: 10px;
+        }
+        .top{
+            width: 100%;
+            height: 50px;
+            /* border: 1px solid blue; */
+            background-color: black;
+            border-radius: 30px 30px 0px 0px;
+            color: white;
+            font-size: 25px;
+            padding: 10px 0px 0px 250px;
+        }
+        .top i{
+            margin-left: 10px;
+        }
+        textarea{
+            width: 100%;
+            height: 90%;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            letter-spacing: 1px;
+            border-radius: 0px 0px 30px 30px;
+            resize: none;/* esse text area ki height or width nhi badti h */
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Add New Note-Page</button>
+    <div class="containar">
+         <!-- <div class="itams">
+            <div class="top">
+                <i class="fa-solid fa-copy"></i>
+                <i class="fa-regular fa-trash-can"></i>
+            </div>
+            <textarea></textarea>
+         </div> -->
+    </div>
+
+    <script>
+        var containar=document.querySelector(".containar");
+        var btn=document.querySelector("#btn");
+
+
+        btn.addEventListener(
+            "click",
+            function(){
+               var itam=document.createElement("div");//main div create 
+               itam.classList.add("itams");//div added one class
+
+               var top=document.createElement("div");//itam one div top created
+               top.classList.add("top");//top added one class
+
+               var copyicon=document.createElement("i");//copy icon added for top mode
+               copyicon.classList.add("fa-solid","fa-copy")//class name 
+
+               var deleteicon=document.createElement("i");//create delet icon
+               deleteicon.classList.add("fa-regular","fa-trash-can");//class for delet icon
+
+               var textarea=document.createElement("textarea");//ceate one textarea
+               textarea.placeholder=" please write down the your things..........."
+            //    textarea.classList.add("textcon");//add class 
+
+               top.appendChild(copyicon);//icon ko top me dalne ke liy
+               top.appendChild(deleteicon);//icon ko top me dalne ke liy
+
+               itam.appendChild(top);//main box me top or textarea ko add karna
+               itam.appendChild(textarea);
+               
+               containar.appendChild(itam);//itam box ko containar me printe karwana
+
+               deleteicon.addEventListener(
+                "click",
+                function(){
+                    containar.removeChild(itam);//clicker the delete by itams box
+                }
+            );
+
+            copyicon.addEventListener(
+                "click",
+                function(){
+                    textarea.select();//textarea me likhe huy text ko copy karne ke liy
+                    document.execCommand("copy");
+                    alert("copied text");
+                }
+            )
+            }
+        )
+    </script>
+</body>
+</html>
